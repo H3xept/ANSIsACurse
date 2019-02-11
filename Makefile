@@ -3,15 +3,16 @@ CFLAGS = -Wall --pedantic --std=c99
 SOURCE_FOLDER = src
 OUT_FOLDER = bin
 SOURCE_FILES = $(SOURCE_FOLDER)/*.c
-LIB_NAME = ansisacurse
+LIB_NAME = libansisacurse
 
 all: compile_dylib copy_headers
 	
 compile_dylib: taget_dir 
 	@ echo "Compiling dylib..."
-	@ $(CC) $(CFLAGS) $(SOURCE_FILES) -c -fpic
-	@ $(CC) -shared -o $(OUT_FOLDER)/libs/lib$(LIB_NAME).so *.o
-	@ rm *.o
+	@ $(CC) $(CFLAGS) $(SOURCE_FILES) -c
+	@ ar rs $(LIB_NAME) *.o
+	@ cp $(LIB_NAME) bin/libs
+	@ rm *.o $(LIB_NAME)
 
 copy_headers: taget_dir
 	@ echo "Copying headers..."
