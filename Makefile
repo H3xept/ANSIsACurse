@@ -3,7 +3,7 @@ CFLAGS = -Wall --pedantic --std=c99
 SOURCE_FOLDER = src
 OUT_FOLDER = bin
 SOURCE_FILES = $(SOURCE_FOLDER)/*.c
-LIB_NAME = libansisacurse
+LIB_NAME = libansisacurse.a
 
 all: compile_dylib copy_headers
 	
@@ -22,3 +22,6 @@ taget_dir:
 	@ echo "Creating folder structure..."
 	@ mkdir -p bin/headers
 	@ mkdir -p bin/libs
+
+clean:
+	rm -rf bin/
