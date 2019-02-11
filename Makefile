@@ -3,7 +3,7 @@ CFLAGS = -Wall --pedantic --std=c99
 SOURCE_FOLDER = src
 OUT_FOLDER = bin
 SOURCE_FILES = $(SOURCE_FOLDER)/*.c
-LIB_NAME = ansiisacurse
+LIB_NAME = ansisacurse
 
 all: compile_dylib copy_headers
 	
