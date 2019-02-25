@@ -5,6 +5,10 @@
 
 // Orig (0;0) -> (top;left)
 
+// Get cursor location
+void save_c_pos();
+void restore_c_pos();
+
 // Move cursor vertical (-u / +d)
 void mv_c_vert(int16_t up_dw);
 // Move cursor up
@@ -23,5 +27,10 @@ void mv_c_rt(uint16_t rt);
 void mv_c_abs(uint16_t x, uint16_t y);
 // Move cursor to newline
 void mv_c_nl();
+// Move cursor to the beginning of the line 
+void mv_c_l_beg();
+
+// Erase current line from beginning to end (cursor position unchanged)
+void del_line(void);
 
 #endif

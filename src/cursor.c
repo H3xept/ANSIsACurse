@@ -5,6 +5,16 @@
 
 #define ESCAPE_SEQ 0x1b
 
+// ** Information Retrieval **
+void save_c_pos() {
+	printf("%c7",ESCAPE_SEQ);
+}
+
+void restore_c_pos() {
+	printf("%c8",ESCAPE_SEQ);
+}
+// ** END Information Retrieval **
+
 // ** Vertical Movement **
 void mv_c_vert(int16_t up_dw) {
 	uint16_t abs_up_dw = abs(up_dw);
@@ -51,4 +61,14 @@ void mv_c_abs(uint16_t x, uint16_t y) {
 void mv_c_nl() {
 	printf("%cE",ESCAPE_SEQ);
 }
+
+void mv_c_l_beg() {
+	printf("\r");
+}
 // ** END Absolute Movement **
+
+// ** Line editing **
+void del_line(void) {
+	printf("\x1b[2K");
+}
+// ** END Line editing **
