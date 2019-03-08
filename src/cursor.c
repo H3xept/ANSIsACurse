@@ -50,7 +50,7 @@ void mv_c_lt(uint16_t lt) {
 }
 
 void mv_c_rt(uint16_t rt) {
-	if (lt == 0) {return;}
+	if (rt == 0) {return;}
 	printf("%c[%dC", ESCAPE_SEQ, rt);
 }
 // ** END Horizontal Movement **
