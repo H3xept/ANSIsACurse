@@ -45,10 +45,12 @@ void mv_c_hor(int16_t lt_rt) {
 }
 
 void mv_c_lt(uint16_t lt) {
+	if (lt == 0) {return;}
 	printf("%c[%dD", ESCAPE_SEQ, lt);
 }
 
 void mv_c_rt(uint16_t rt) {
+	if (lt == 0) {return;}
 	printf("%c[%dC", ESCAPE_SEQ, rt);
 }
 // ** END Horizontal Movement **
