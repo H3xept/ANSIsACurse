@@ -26,11 +26,16 @@ typedef enum {
 
 // Set character color
 void c_color(C_COLOR_CODE c_code);
+char* c_color_string(const char* src, C_COLOR_CODE c_code);
 // Set background color
 void c_bg_color(C_COLOR_CODE c_code);
+char* c_bg_color_string(const char* src, C_COLOR_CODE c_code);
 // Set decorations for characters
 void c_decorate(C_DECORATION c_decoration);
+char* c_decorate_string(const char* src, C_DECORATION c_decoration);
 // Reset original terminal attributes
 void c_reset();
+
+
 
 #endif
