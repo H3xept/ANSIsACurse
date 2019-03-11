@@ -17,7 +17,7 @@ void c_color(C_COLOR_CODE c_code) {
 }
 
 char* c_color_string(const char* src, C_COLOR_CODE c_code) {
-	char* ret = calloc(strlen(src) + 10);
+	char* ret = calloc(strlen(src) + 10, sizeof(char));
 	sprintf(ret, "\x1b[%dm%s\x1b[0m",c_code, src);
 	realloc(ret, strlen(ret) + 1);
 	return ret;
