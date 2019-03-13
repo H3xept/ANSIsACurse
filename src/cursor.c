@@ -45,12 +45,12 @@ void mv_c_hor(int16_t lt_rt) {
 }
 
 void mv_c_lt(uint16_t lt) {
-	if (lt == 0) {return;}
+	if (lt == 0) { return; }
 	printf("%c[%dD", ESCAPE_SEQ, lt);
 }
 
 void mv_c_rt(uint16_t rt) {
-	if (rt == 0) {return;}
+	if (rt == 0) { return; }
 	printf("%c[%dC", ESCAPE_SEQ, rt);
 }
 // ** END Horizontal Movement **
@@ -73,4 +73,9 @@ void mv_c_l_beg() {
 void del_line(void) {
 	printf("\x1b[2K");
 }
+
+void del_line_to_end(void) {
+	printf("\x1b[K");
+}
+
 // ** END Line editing **

@@ -32,5 +32,7 @@ void mv_c_l_beg();
 
 // Erase current line from beginning to end (cursor position unchanged)
 void del_line(void);
+// Erase current line from current position to end
+void del_line_to_end(void);
 
 #endif

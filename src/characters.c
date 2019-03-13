@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "characters.h"
 
@@ -19,7 +20,7 @@ void c_color(C_COLOR_CODE c_code) {
 char* c_color_string(const char* src, C_COLOR_CODE c_code) {
 	char* ret = calloc(strlen(src) + 10, sizeof(char));
 	sprintf(ret, "\x1b[%dm%s\x1b[0m",c_code, src);
-	realloc(ret, strlen(ret) + 1);
+	ret = realloc(ret, strlen(ret) + 1);
 	return ret;
 }
 
@@ -43,6 +44,7 @@ char* c_decorate_string(const char* src, C_DECORATION c_decoration) {
 	{ return c_color_string(src, (C_COLOR_CODE)C_DECORATION_CODE_Reversed); }
 	if (c_decoration & C_DECORATION_Blinking)
 	{ return c_color_string(src, (C_COLOR_CODE)C_DECORATION_CODE_Blinking); }
+	return (char*)src;
 }
 
 void c_bg_color(C_COLOR_CODE c_code) {
