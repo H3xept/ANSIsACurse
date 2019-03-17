@@ -17,6 +17,7 @@ void restore_c_pos() {
 
 // ** Vertical Movement **
 void mv_c_vert(int16_t up_dw) {
+	if (!up_dw) return;
 	uint16_t abs_up_dw = abs(up_dw);
 	if (up_dw > 0) {
 		mv_c_dw(abs_up_dw);
@@ -36,6 +37,7 @@ void mv_c_dw(uint16_t dw) {
 
 // ** Horizontal Movement **
 void mv_c_hor(int16_t lt_rt) {
+	if (!lt_rt) return;
 	uint16_t abs_lt_rt = abs(lt_rt);
 	if (lt_rt > 0) {
 		mv_c_rt(abs_lt_rt);
